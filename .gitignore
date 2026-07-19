@@ -1,0 +1,39 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.versionsBackup
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Portable Maven Download Folder
+.maven/
+
+# IDEs and Editors
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+bin/
+
+# Temporary and Log files
+*.log
+logs/
+temp/
+tmp/
+
+# Extension Packages
+comment-offense-extension.zip
+
+# System Files
+.DS_Store
+Thumbs.db

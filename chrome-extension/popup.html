@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Comment Offense Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include Outfit Font for premium branding -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-icon">🛡️</span>
+        <div class="logo-text">
+          <h1>Comment Offense</h1>
+          <p>AI Moderation Dashboard</p>
+        </div>
+      </div>
+      <div class="status-indicator" id="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text" id="status-text">Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Main Stats Grid -->
+    <section class="stats-container">
+      <div class="stat-card total">
+        <div class="stat-info">
+          <h3>Total Scanned</h3>
+          <p id="stat-total">0</p>
+        </div>
+      </div>
+      
+      <div class="stats-subgrid">
+        <div class="stat-card safe">
+          <h3>Safe</h3>
+          <p id="stat-safe">0</p>
+        </div>
+        <div class="stat-card offensive">
+          <h3>Offensive</h3>
+          <p id="stat-offensive">0</p>
+        </div>
+        <div class="stat-card spam">
+          <h3>Spam</h3>
+          <p id="stat-spam">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Section -->
+    <section class="control-panel">
+      <h2>Scan Settings</h2>
+      
+      <!-- Sensitivity Threshold Slider -->
+      <div class="slider-group">
+        <div class="slider-labels">
+          <span>Offense Sensitivity</span>
+          <span class="slider-val" id="threshold-val">70%</span>
+        </div>
+        <input type="range" id="threshold-slider" min="10" max="90" value="70">
+        <p class="slider-desc">Comments exceeding this confidence score will be marked as Offensive.</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="actions-grid">
+        <button id="btn-analyze" class="btn primary-btn">
+          <span class="btn-icon">⚡</span> Analyze Page Comments
+        </button>
+        <button id="btn-inspect" class="btn secondary-btn">
+          <span class="btn-icon">🔍</span> Custom Element Picker
+        </button>
+        <button id="btn-toggle-view" class="btn outline-btn">
+          <span class="btn-icon">👁️</span> Hide Offensive Comments
+        </button>
+        <button id="btn-export" class="btn outline-btn">
+          <span class="btn-icon">📥</span> Export CSV Report
+        </button>
+      </div>
+    </section>
+
+    <!-- Filters and Live List -->
+    <section class="history-panel">
+      <div class="panel-header">
+        <h2>Scan History</h2>
+        <select id="filter-select" class="dropdown">
+          <option value="ALL">Show All</option>
+          <option value="OFFENSIVE">Offensive</option>
+          <option value="SUSPICIOUS">Suspicious</option>
+          <option value="SAFE">Safe</option>
+          <option value="SPAM">Spam</option>
+        </select>
+      </div>
+
+      <div class="history-list" id="history-list">
+        <div class="empty-state">
+          <p>No comments scanned yet.</p>
+          <p class="sub">Open YouTube, X, or Reddit and hit "Analyze Page" to scan!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Powered by Spring Boot + AI Moderation</p>
+    </footer>
+  </div>
+</body>
+</html>

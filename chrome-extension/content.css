@@ -1,0 +1,181 @@
+/* Comment analysis highlights */
+.coa-highlight {
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+}
+
+.coa-highlight.coa-safe {
+  border-left: 4px solid #10b981 !important;
+  background-color: rgba(16, 185, 129, 0.03) !important;
+}
+
+.coa-highlight.coa-suspicious {
+  border-left: 4px solid #f59e0b !important;
+  background-color: rgba(245, 158, 11, 0.03) !important;
+}
+
+.coa-highlight.coa-offensive {
+  border-left: 4px solid #ef4444 !important;
+  background-color: rgba(239, 68, 68, 0.03) !important;
+}
+
+.coa-highlight.coa-spam {
+  border-left: 4px solid #8b5cf6 !important;
+  background-color: rgba(139, 92, 246, 0.03) !important;
+}
+
+/* Hidden / Blurred state */
+.coa-highlight.coa-hidden {
+  filter: blur(8px) !important;
+  opacity: 0.15 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.coa-hidden-placeholder {
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px dashed #ef4444;
+  color: #ef4444;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 6px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.coa-hidden-placeholder button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.coa-hidden-placeholder button:hover {
+  background: #dc2626;
+}
+
+/* Floating Badge */
+.coa-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #fff;
+  cursor: help;
+  margin-left: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 10;
+  vertical-align: middle;
+}
+
+.coa-badge.coa-badge-safe { background-color: #10b981; }
+.coa-badge.coa-badge-suspicious { background-color: #f59e0b; }
+.coa-badge.coa-badge-offensive { background-color: #ef4444; }
+.coa-badge.coa-badge-spam { background-color: #8b5cf6; }
+
+/* Custom Floating Tooltip Popover */
+.coa-tooltip {
+  position: fixed;
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f3f4f6 !important;
+  padding: 14px !important;
+  border-radius: 12px !important;
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  width: 260px !important;
+  z-index: 1000000 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.coa-tooltip.coa-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.coa-tooltip-title {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coa-tooltip-score {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.coa-tooltip-reason {
+  font-style: italic;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  padding-left: 6px;
+}
+
+/* Category grid and bars */
+.coa-cat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.coa-cat-label {
+  font-size: 10px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.coa-cat-bar-container {
+  width: 120px;
+  height: 6px;
+  background: #374151;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.coa-cat-bar {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.coa-cat-val {
+  font-size: 10px;
+  font-weight: 700;
+  color: #f3f4f6;
+  width: 25px;
+  text-align: right;
+}
+
+/* Visual Inspector Hover styles */
+.coa-inspector-hover {
+  outline: 2px dashed #a855f7 !important;
+  outline-offset: 2px !important;
+  cursor: crosshair !important;
+  background-color: rgba(168, 85, 247, 0.1) !important;
+}
